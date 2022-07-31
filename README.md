@@ -1,5 +1,9 @@
 # next-mantine-blog-template
 
+![MIT License](https://img.shields.io/github/license/dgelineau/next-mantine-blog-template)
+![Open Issues](https://img.shields.io/github/issues/dgelineau/next-mantine-blog-template)
+![Stars](https://img.shields.io/github/stars/dgelineau/next-mantine-blog-template)
+
 A basic blog template that generates all of the posts from the `posts` folder statically using Next.js and the mantine component library.
 
 [View Demo Hosted on Vercel](https://next-mantine-blog-template.vercel.app/)
