@@ -1,0 +1,16 @@
+{
+  "importOrder": [
+    "^react",
+    "^next(.*)$",
+    "^@mantine/(.*)$",
+    "^tabler-icons-react",
+    "<THIRD_PARTY_MODULES>",
+    "^@/layouts(.*)$",
+    "^@/components/(.*)$",
+    "^@/helpers(.*)$",
+    "^@/config(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
