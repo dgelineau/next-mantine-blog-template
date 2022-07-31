@@ -2,18 +2,20 @@
 
 A basic blog template that generates all of the posts from the `posts` folder statically using Next.js and the mantine component library.
 
-<ul>
-  <li>⚡ [Next.js](https://nextjs.org/) SSG</li>
-  <li>🧠 TypeScript</li>
-  <li>🏗️ [Mantine](https://mantine.dev/)</li>
-  <li>🤔 ESLint</li>
-  <li>💅 Prettier</li>
-  <li>🐕 Husky (Lint-staged, CommitLint)</li>
-  <li>🤖 SEO Meta Data</li>
-  <li>🌙 Dark / Light Mode</li>
-  <li>✏️ [Hygen](http://www.hygen.io/)</li>
-  <li>📍 Absolute Imports</li>
-</ul>
+[View Demo Hosted on Vercel](https://next-mantine-blog-template.vercel.app/)
+
+
+  - ⚡ [Next.js](https://nextjs.org/) SSG
+  - 🧠 TypeScript
+  - 🏗️ [Mantine](https://mantine.dev/)
+  - 🤔 ESLint
+  - 💅 Prettier
+  - 🐕 Husky (Lint-staged, CommitLint)
+  - 🤖 SEO Meta Data
+  - 🌙 Dark / Light Mode
+  - ✏️ [Hygen](http://www.hygen.io/)
+  - 📍 Absolute Imports
+
 
 ## Run Locally
 
@@ -99,11 +101,9 @@ This will generate a new component in our `components` folder with a main compon
 
 If we pass in `Carousel` as the name of the component then the following files will be generated in the `components/Carousel` folder and the component will be automatically appended to the `components/index.tsx` file and exported for use.
 
-<ul>
-  <li>`Carousel.tsx`</li>
-  <li>`styles.tsx`</li>
-  <li>`types.d.tsx`</li>
-</ul>
+  - `Carousel.tsx`
+  - `styles.tsx`
+  - `types.d.tsx`
 
 ## Contributing
 
