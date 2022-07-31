@@ -3,6 +3,25 @@ import { sync } from "glob";
 import matter from "gray-matter";
 import path from "path";
 
+export interface PostMeta {
+  excerpt: string;
+  slug: string;
+  title: string;
+  tags: string[];
+  date: string;
+  category: string;
+  image?: string;
+  author: {
+    name: string;
+    image: string;
+  };
+}
+
+interface Post {
+  content: string;
+  meta: PostMeta;
+}
+
 /* Joining the current working directory with the `posts` directory. */
 const POSTS_PATH = path.join(process.cwd(), "posts");
 
@@ -63,22 +82,3 @@ export const getAllPosts = () => {
     .reverse();
   return posts;
 };
-
-interface Post {
-  content: string;
-  meta: PostMeta;
-}
-
-export interface PostMeta {
-  excerpt: string;
-  slug: string;
-  title: string;
-  tags: string[];
-  date: string;
-  category: string;
-  image?: string;
-  author: {
-    name: string;
-    image: string;
-  };
-}

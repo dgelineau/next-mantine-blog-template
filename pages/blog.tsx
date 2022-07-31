@@ -12,7 +12,7 @@ import { ArticleCard } from "@/components/index";
 
 import { PostMeta, getAllPosts } from "@/helpers/blog";
 
-const Blog = ({ posts }: { posts: PostMeta[] }) => {
+function Blog({ posts }: { posts: PostMeta[] }) {
   const [value, setValue] = useState("");
   const [debounced] = useDebouncedValue(value, 200, { leading: true });
 
@@ -56,8 +56,8 @@ const Blog = ({ posts }: { posts: PostMeta[] }) => {
             onChange={(event) => setValue(event.currentTarget.value)}
           />
         </Grid.Col>
-        {filtered.map((post, idx) => (
-          <Grid.Col xs={12} sm={6} key={`${post.slug}-${idx}`}>
+        {filtered.map((post) => (
+          <Grid.Col xs={12} sm={6} key={post.slug}>
             <ArticleCard
               link={`/posts/${post.slug}`}
               title={post.title}
@@ -71,7 +71,7 @@ const Blog = ({ posts }: { posts: PostMeta[] }) => {
       </Grid>
     </>
   );
-};
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts().map((post) => post.meta);

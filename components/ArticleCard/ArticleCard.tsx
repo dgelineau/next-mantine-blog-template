@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
+  Anchor,
   Avatar,
   Badge,
   Card,
@@ -24,21 +25,12 @@ export default function ArticleCard({
   description,
   author,
   category,
-  ...others
 }: ArticleCardProps &
   Omit<React.ComponentPropsWithoutRef<"div">, keyof ArticleCardProps>) {
   const { classes, cx } = useStyles();
-  const linkProps = {
-    href: link,
-  };
 
   return (
-    <Card
-      withBorder
-      radius="md"
-      className={cx(classes.card, className)}
-      {...others}
-    >
+    <Card withBorder radius="md" className={cx(classes.card, className)}>
       {image && (
         <CardSection
           style={{
@@ -46,8 +38,8 @@ export default function ArticleCard({
             minHeight: 180,
           }}
         >
-          <Link {...linkProps} passHref>
-            <a {...linkProps}>
+          <Link href={link} passHref>
+            <Anchor component="a">
               <Image
                 alt={`${title} cover image`}
                 src={image}
@@ -56,7 +48,7 @@ export default function ArticleCard({
                 sizes="50vw"
                 priority
               />
-            </a>
+            </Anchor>
           </Link>
         </CardSection>
       )}
@@ -67,13 +59,8 @@ export default function ArticleCard({
         </Badge>
       )}
 
-      <Link {...linkProps} passHref>
-        <Text
-          className={classes.title}
-          weight={500}
-          component="a"
-          {...linkProps}
-        >
+      <Link href={link} passHref>
+        <Text className={classes.title} weight={500} component="a">
           {title}
         </Text>
       </Link>

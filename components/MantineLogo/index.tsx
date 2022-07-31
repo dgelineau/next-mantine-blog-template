@@ -1,6 +1,11 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
+/* eslint-disable react/require-default-props */
+import { ComponentPropsWithoutRef } from "react";
+
 import { useMantineTheme } from "@mantine/core";
 
-interface MantineLogoProps extends React.ComponentPropsWithoutRef<"svg"> {
+interface MantineLogoProps extends ComponentPropsWithoutRef<"svg"> {
   variant?: "white" | "default";
   width?: number;
 }

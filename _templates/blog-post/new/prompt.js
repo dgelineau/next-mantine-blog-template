@@ -52,12 +52,12 @@ module.exports = {
     return inquirer.prompt(questions).then((answers) => {
       const { title, author, tags } = answers;
 
-      // both set of answers must be returned as a merged object, else the previous set of answers won't be available to the templates
-      return Object.assign({}, answers, {
+      return {
+        ...answers,
         slug: slugify(title, { lower: true }),
         authorImage: `/${slugify(author, { lower: true })}.jpeg`,
         tags: tags.split(",").map((tag) => tag.trim()),
-      });
+      };
     });
   },
 };

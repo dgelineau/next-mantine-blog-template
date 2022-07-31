@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 
 import type { GetStaticPaths, GetStaticProps } from "next";
@@ -19,6 +20,7 @@ import { Prism } from "@mantine/prism";
 
 import { ArrowNarrowLeft } from "tabler-icons-react";
 
+import type { MDXComponents } from "mdx/types";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 
@@ -33,6 +35,38 @@ interface MDXPost {
   meta: PostMeta;
 }
 
+const components: MDXComponents = {
+  Image,
+  YouTube,
+  ReactTable,
+  code: (props: any) => <Code {...props} />,
+  pre: (props: any) => {
+    const matches = (props.children.props.className || "").match(
+      /language-(?<lang>.*)/
+    );
+
+    return (
+      <Prism
+        language={
+          matches && matches.groups && matches.groups.lang
+            ? matches.groups.lang
+            : ""
+        }
+        mb={20}
+      >
+        {props.children.props.children}
+      </Prism>
+    );
+  },
+  h1: (props: any) => <Title order={1} {...props} />,
+  h2: (props: any) => <Title order={2} {...props} />,
+  h3: (props: any) => <Title order={3} {...props} />,
+  h4: (props: any) => <Title order={4} {...props} />,
+  h5: (props: any) => <Title order={5} {...props} />,
+  h6: (props: any) => <Title order={6} {...props} />,
+  a: (props: any) => <Anchor {...props} />,
+};
+
 export default function PostPage({ post }: { post: MDXPost }) {
   return (
     <>
@@ -46,40 +80,7 @@ export default function PostPage({ post }: { post: MDXPost }) {
         <Title order={1}>{post.meta.title}</Title>
       </Group>
 
-      <MDXRemote
-        {...post.source}
-        components={{
-          Image,
-          YouTube,
-          ReactTable,
-          code: (props: any) => <Code {...props} />,
-          pre: (props: any) => {
-            const matches = (props.children.props.className || "").match(
-              /language-(?<lang>.*)/
-            );
-
-            return (
-              <Prism
-                language={
-                  matches && matches.groups && matches.groups.lang
-                    ? matches.groups.lang
-                    : ""
-                }
-                mb={20}
-              >
-                {props.children.props.children}
-              </Prism>
-            );
-          },
-          h1: ({ ref: _, ...rest }) => <Title order={1} {...rest} />,
-          h2: ({ ref: _, ...rest }) => <Title order={2} {...rest} />,
-          h3: ({ ref: _, ...rest }) => <Title order={3} {...rest} />,
-          h4: ({ ref: _, ...rest }) => <Title order={4} {...rest} />,
-          h5: ({ ref: _, ...rest }) => <Title order={5} {...rest} />,
-          h6: ({ ref: _, ...rest }) => <Title order={6} {...rest} />,
-          a: ({ ref: _, ...rest }) => <Anchor {...rest} />,
-        }}
-      />
+      <MDXRemote {...post.source} components={components} />
     </>
   );
 }

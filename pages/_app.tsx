@@ -58,6 +58,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             <NotificationsProvider>
               <AppBase>
                 {settings.enablePageProgress && <RouterTransition />}
+                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                 <Component {...pageProps} />
               </AppBase>
             </NotificationsProvider>
