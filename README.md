@@ -75,9 +75,9 @@ tags:
   - blogging
 date: 2022-07-31
 excerpt: This is a guide on how to create a blog post using a hygen generator
-image: ./images/generate-post.jpeg
+image: /images/generate-post.jpeg
 category: Hygen
-author: { name: Devin Gelineau, image: ./images/authors/devin-gelineau.jpeg }
+author: { name: Devin Gelineau, image: /images/authors/devin-gelineau.jpeg }
 ---
 ```
 
