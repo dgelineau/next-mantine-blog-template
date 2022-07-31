@@ -33,7 +33,7 @@ module.exports = {
         type: "input",
         name: "image",
         message:
-          "Route for the image of the blog post? (ex: /images/react-example-code.jpeg",
+          "Route for the image of the blog post? (ex: ./images/react-example-code.jpeg",
         required: true,
       },
       {
@@ -55,7 +55,7 @@ module.exports = {
       return {
         ...answers,
         slug: slugify(title, { lower: true }),
-        authorImage: `/${slugify(author, { lower: true })}.jpeg`,
+        authorImage: `./${slugify(author, { lower: true })}.jpeg`,
         tags: tags.split(",").map((tag) => tag.trim()),
       };
     });

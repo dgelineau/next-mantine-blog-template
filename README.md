@@ -4,18 +4,16 @@ A basic blog template that generates all of the posts from the `posts` folder st
 
 [View Demo Hosted on Vercel](https://next-mantine-blog-template.vercel.app/)
 
-
-  - ⚡ [Next.js](https://nextjs.org/) SSG
-  - 🧠 TypeScript
-  - 🏗️ [Mantine](https://mantine.dev/)
-  - 🤔 ESLint
-  - 💅 Prettier
-  - 🐕 Husky (Lint-staged, CommitLint)
-  - 🤖 SEO Meta Data
-  - 🌙 Dark / Light Mode
-  - ✏️ [Hygen](http://www.hygen.io/)
-  - 📍 Absolute Imports
-
+- ⚡ [Next.js](https://nextjs.org/) SSG
+- 🧠 TypeScript
+- 🏗️ [Mantine](https://mantine.dev/)
+- 🤔 ESLint
+- 💅 Prettier
+- 🐕 Husky (Lint-staged, CommitLint)
+- 🤖 SEO Meta Data
+- 🌙 Dark / Light Mode
+- ✏️ [Hygen](http://www.hygen.io/)
+- 📍 Absolute Imports
 
 ## Run Locally
 
@@ -77,9 +75,9 @@ tags:
   - blogging
 date: 2022-07-31
 excerpt: This is a guide on how to create a blog post using a hygen generator
-image: /images/generate-post.jpeg
+image: ./images/generate-post.jpeg
 category: Hygen
-author: { name: Devin Gelineau, image: /images/authors/devin-gelineau.jpeg }
+author: { name: Devin Gelineau, image: ./images/authors/devin-gelineau.jpeg }
 ---
 ```
 
@@ -101,9 +99,9 @@ This will generate a new component in our `components` folder with a main compon
 
 If we pass in `Carousel` as the name of the component then the following files will be generated in the `components/Carousel` folder and the component will be automatically appended to the `components/index.tsx` file and exported for use.
 
-  - `Carousel.tsx`
-  - `styles.tsx`
-  - `types.d.tsx`
+- `Carousel.tsx`
+- `styles.tsx`
+- `types.d.tsx`
 
 ## Contributing
 
