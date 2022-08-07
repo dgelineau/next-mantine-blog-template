@@ -2,6 +2,8 @@ import { MantineTheme } from "@mantine/core";
 
 import { Icon as TablerIcon } from "tabler-icons-react";
 
+import { GiscusProps } from "@giscus/react";
+
 export interface HeaderLink {
   label: string;
   link: string;
@@ -15,6 +17,7 @@ export interface Settings {
   headerSize: number;
   enablePageProgress: boolean;
   headerLinks: HeaderLink[];
+  giscus?: GiscusProps;
 }
 
 export interface Route {

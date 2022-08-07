@@ -6,3 +6,4 @@ export { default as YouTube } from "@/components/YouTube/YouTube";
 export { default as ErrorPage } from "@/components/ErrorPage/ErrorPage";
 
 // Hygen Target for new components
+export { default as GiscusComments } from "@/components/GiscusComments/GiscusComments";

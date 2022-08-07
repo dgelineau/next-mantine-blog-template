@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/server": "^11.4.0",
+    "@giscus/react": "^2.2.0",
     "@mantine/core": "^5.0.0",
     "@mantine/hooks": "^5.0.0",
     "@mantine/modals": "^5.0.0",
