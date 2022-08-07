@@ -1,6 +1,7 @@
 import fs from "fs";
 import { sync } from "glob";
 import matter from "gray-matter";
+import normalize from "normalize-path";
 import path from "path";
 
 export interface PostMeta {
@@ -32,7 +33,7 @@ const POSTS_PATH = path.join(process.cwd(), "posts");
  * @returns An array of strings.
  */
 export const getSlugs = (): string[] => {
-  const paths = sync(`${POSTS_PATH}/*.mdx`);
+  const paths = sync(normalize(`${POSTS_PATH}/*.mdx`));
 
   return paths.map((filePath) => {
     const parts = filePath.split("/");
