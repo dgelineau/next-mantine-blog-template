@@ -26,6 +26,7 @@ A basic blog template that generates all of the posts from the `posts` folder st
 - 🌙 Dark / Light Mode
 - ✏️ [Hygen](http://www.hygen.io/)
 - 📍 Absolute Imports
+- 💬 [Giscus](https://giscus.app/)
 
 ## Run Locally
 
@@ -105,7 +106,7 @@ Hygen is used to generate both blog posts frontmatter and components and more in
     <tr>
       <td>`author`</td>
       <td>`string`</td>
-      <td>**Required**. Name of the author </td>
+      <td>**Required**. Name of the author</td>
     </tr>
     <tr>
       <td>`date`</td>
@@ -166,8 +167,36 @@ This will generate a new component in our `components` folder with a main compon
 If we pass in `Carousel` as the name of the component then the following files will be generated in the `components/Carousel` folder and the component will be automatically appended to the `components/index.tsx` file and exported for use.
 
 - `Carousel.tsx`
-- `styles.tsx`
-- `types.d.tsx`
+- `styles.ts`
+- `types.d.ts`
+
+### Comment support
+
+This template is using [Giscus](https://giscus.app/) to support comments. These comments are automatically added to a discussion on your Github repository. You can find more setup instructions on the Giscus website itself. You need to update the `giscus` object in `config/settings` and change the follow variables
+
+- `repo`
+- `repoId`
+- `category`
+- `categoryId`
+
+You can find the correct values for these variables on the Giscus website under the `Enable giscus` section after filling out the configuration.
+
+```js
+import { Settings } from "@/config/types";
+
+const settings: Settings = {
+  ...applicationSettings,
+  giscus: {
+    repo: "dgelineau/next-mantine-blog-template",
+    repoId: "R_kgDOHv0e6Q",
+    category: "Giscus",
+    categoryId: "DIC_kwDOHv0e6c4CQqsR",
+    mapping: "pathname",
+    loading: "lazy",
+    lang: "en",
+  },
+};
+```
 
 ## Contributing
 

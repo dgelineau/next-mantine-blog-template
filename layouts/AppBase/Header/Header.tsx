@@ -1,4 +1,6 @@
-import { Burger, Group, Header } from "@mantine/core";
+import Link from "next/link";
+
+import { Anchor, Burger, Group, Header } from "@mantine/core";
 
 import useStyles from "@/layouts/AppBase/Header/styles";
 import { HeaderProps } from "@/layouts/AppBase/Header/types";
@@ -8,6 +10,7 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 
 import getHeaderLinks from "@/helpers/header";
 
+import Routes from "@/config/routes";
 import settings from "@/config/settings";
 
 export default function HeaderSearch({ open, setOpen }: HeaderProps) {
@@ -24,7 +27,11 @@ export default function HeaderSearch({ open, setOpen }: HeaderProps) {
             className={classes.burger}
             aria-label="open application menu"
           />
-          <MantineLogo />
+          <Link passHref href={Routes.home.href}>
+            <Anchor className={classes.logoHref}>
+              <MantineLogo />
+            </Anchor>
+          </Link>
         </Group>
 
         <Group>
