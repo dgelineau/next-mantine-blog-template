@@ -15,6 +15,10 @@ export default createStyles((theme) => ({
     alignItems: "center",
   },
 
+  logoHref: {
+    display: "flex",
+  },
+
   links: {
     [theme.fn.smallerThan("md")]: {
       display: "none",
