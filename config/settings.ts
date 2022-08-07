@@ -31,6 +31,15 @@ const settings: Settings = {
       activeLinks: [Routes.contact.href],
     },
   ],
+  giscus: {
+    repo: "dgelineau/next-mantine-blog-template",
+    repoId: "R_kgDOHv0e6Q",
+    category: "Giscus",
+    categoryId: "DIC_kwDOHv0e6c4CQqsR",
+    mapping: "pathname",
+    loading: "lazy",
+    lang: "en",
+  },
 };
 
 export default settings;

@@ -24,7 +24,7 @@ import type { MDXComponents } from "mdx/types";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 
-import { YouTube } from "@/components/index";
+import { GiscusComments, YouTube } from "@/components/index";
 
 import { PostMeta, getPostFromSlug, getSlugs } from "@/helpers/blog";
 
@@ -81,6 +81,8 @@ export default function PostPage({ post }: { post: MDXPost }) {
       </Group>
 
       <MDXRemote {...post.source} components={components} />
+
+      <GiscusComments />
     </>
   );
 }
