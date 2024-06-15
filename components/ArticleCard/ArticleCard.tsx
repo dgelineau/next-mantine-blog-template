@@ -38,18 +38,16 @@ export default function ArticleCard({
             minHeight: 180,
           }}
         >
-          <Link href={link} passHref>
-            <Anchor component="a">
-              <Image
-                alt={`${title} cover image`}
-                src={image}
-                layout="fill"
-                objectFit="cover"
-                sizes="50vw"
-                priority
-              />
-            </Anchor>
-          </Link>
+          <Anchor component={Link} href={link}>
+            <Image
+              alt={`${title} cover image`}
+              src={image}
+              layout="fill"
+              objectFit="cover"
+              sizes="50vw"
+              priority
+            />
+          </Anchor>
         </CardSection>
       )}
 
@@ -59,11 +57,9 @@ export default function ArticleCard({
         </Badge>
       )}
 
-      <Link href={link} passHref>
-        <Text className={classes.title} weight={500} component="a">
-          {title}
-        </Text>
-      </Link>
+      <Text className={classes.title} weight={500} component={Link} href={link}>
+        {title}
+      </Text>
 
       <Text size="sm" color="dimmed" lineClamp={4}>
         {description}

@@ -72,11 +72,14 @@ export default function PostPage({ post }: { post: MDXPost }) {
     <>
       <NextSeo title={post.meta.title} description={post.meta.excerpt} />
       <Group>
-        <Link href={Routes.blog.href} passHref>
-          <ActionIcon component="a" aria-label="back to blog list">
-            <ArrowNarrowLeft size={34} />
-          </ActionIcon>
-        </Link>
+        <ActionIcon
+          component={Link}
+          href={Routes.blog.href}
+          aria-label="back to blog list"
+        >
+          <ArrowNarrowLeft size={34} />
+        </ActionIcon>
+
         <Title order={1}>{post.meta.title}</Title>
       </Group>
 

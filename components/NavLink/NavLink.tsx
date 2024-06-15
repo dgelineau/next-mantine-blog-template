@@ -17,32 +17,31 @@ export default function NavLink({
   const router = useRouter();
 
   return (
-    <Link passHref href={link}>
-      <Anchor
-        key={label}
-        href={link}
-        className={cx(classes.link, {
-          [classes.linkActive]: activeLinks.includes(router.pathname),
-        })}
-        underline={false}
-      >
-        <Group position="apart" spacing={0}>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              width: "100%",
-            }}
-          >
-            {Icon && (
-              <ThemeIcon variant="outline" size={30}>
-                <Icon size={18} />
-              </ThemeIcon>
-            )}
-            <Box ml={Icon ? "md" : undefined}>{label}</Box>
-          </Box>
-        </Group>
-      </Anchor>
-    </Link>
+    <Anchor
+      component={Link}
+      key={label}
+      href={link}
+      className={cx(classes.link, {
+        [classes.linkActive]: activeLinks.includes(router.pathname),
+      })}
+      underline={false}
+    >
+      <Group position="apart" spacing={0}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          {Icon && (
+            <ThemeIcon variant="outline" size={30}>
+              <Icon size={18} />
+            </ThemeIcon>
+          )}
+          <Box ml={Icon ? "md" : undefined}>{label}</Box>
+        </Box>
+      </Group>
+    </Anchor>
   );
 }

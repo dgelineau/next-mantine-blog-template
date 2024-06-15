@@ -27,11 +27,14 @@ export default function HeaderSearch({ open, setOpen }: HeaderProps) {
             className={classes.burger}
             aria-label="open application menu"
           />
-          <Link passHref href={Routes.home.href}>
-            <Anchor className={classes.logoHref}>
-              <MantineLogo />
-            </Anchor>
-          </Link>
+
+          <Anchor
+            className={classes.logoHref}
+            component={Link}
+            href={Routes.home.href}
+          >
+            <MantineLogo />
+          </Anchor>
         </Group>
 
         <Group>

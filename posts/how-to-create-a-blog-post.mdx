@@ -179,7 +179,7 @@ This template is using [Giscus](https://giscus.app/) to support comments. These 
 - `category`
 - `categoryId`
 
-You can find the correct values for these variables on the Giscus website under the `Enable giscus` section after filling out the configuration.
+You can find the correct values for these variables on the Giscus website under the `Enable giscus` section after filling out the configuration; once you have them ensure that you are properly setting your environment variables so that they will be pulled and used properly.
 
 ```js
 import { Settings } from "@/config/types";
@@ -187,10 +187,10 @@ import { Settings } from "@/config/types";
 const settings: Settings = {
   ...applicationSettings,
   giscus: {
-    repo: "dgelineau/next-mantine-blog-template",
-    repoId: "R_kgDOHv0e6Q",
-    category: "Giscus",
-    categoryId: "DIC_kwDOHv0e6c4CQqsR",
+    repo: env.NEXT_PUBLIC_GISCUS_REPO,
+    repoId: env.NEXT_PUBLIC_GISCUS_REPO_ID,
+    category: env.NEXT_PUBLIC_GISCUS_CATEGORY,
+    categoryId: env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
     mapping: "pathname",
     loading: "lazy",
     lang: "en",
