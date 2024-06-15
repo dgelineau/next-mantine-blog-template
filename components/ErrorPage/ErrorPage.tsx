@@ -27,16 +27,15 @@ export default function ErrorPage({
         {description}
       </Text>
       <Group position="center">
-        <Link href={Routes.home.href} passHref>
-          <Button
-            variant="subtle"
-            size="md"
-            component="a"
-            aria-label="return to home page"
-          >
-            Take me back to home page
-          </Button>
-        </Link>
+        <Button
+          component={Link}
+          href={Routes.home.href}
+          variant="subtle"
+          size="md"
+          aria-label="return to home page"
+        >
+          Take me back to home page
+        </Button>
       </Group>
     </Container>
   );

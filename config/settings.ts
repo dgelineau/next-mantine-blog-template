@@ -1,3 +1,4 @@
+import env from "@/config/env";
 import Routes from "@/config/routes";
 import { Settings } from "@/config/types";
 
@@ -32,10 +33,10 @@ const settings: Settings = {
     },
   ],
   giscus: {
-    repo: "dgelineau/next-mantine-blog-template",
-    repoId: "R_kgDOHv0e6Q",
-    category: "Giscus",
-    categoryId: "DIC_kwDOHv0e6c4CQqsR",
+    repo: env.NEXT_PUBLIC_GISCUS_REPO,
+    repoId: env.NEXT_PUBLIC_GISCUS_REPO_ID,
+    category: env.NEXT_PUBLIC_GISCUS_CATEGORY,
+    categoryId: env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
     mapping: "pathname",
     loading: "lazy",
     lang: "en",
