@@ -1,7 +1,3 @@
 {
-  "origins": ["https://next-mantine-blog-template.vercel.app/"],
-  "originsRegex": [
-    "https://next-mantine-blog-template-git-([A-z0-9]|-)\\.vercel\\.app",
-    "https://next-mantine-blog-template-component-git-([A-z0-9]|-)\\.vercel\\.app",
-  ]
+  "origins": ["https://next-mantine-blog-template.vercel.app"],
 }
